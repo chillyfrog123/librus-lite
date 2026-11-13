@@ -1314,6 +1314,25 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "e2db585e1d738fc771bf08a151420d3ed193d9d895a36df7f6f8a9456b911ddc"
 
 [[package]]
+name = "klaso-desktop"
+version = "0.6.1"
+dependencies = [
+ "anyhow",
+ "base64 0.22.1",
+ "chrono",
+ "chrono-tz",
+ "eframe",
+ "html-escape",
+ "keyring",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "sha2",
+ "windows-sys 0.61.2",
+ "zeroize",
+]
+
+[[package]]
 name = "libc"
 version = "0.2.191"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -1339,25 +1358,6 @@ dependencies = [
  "libc",
  "plain",
  "redox_syscall 0.9.5",
-]
-
-[[package]]
-name = "librus-lite"
-version = "0.6.1"
-dependencies = [
- "anyhow",
- "base64 0.22.1",
- "chrono",
- "chrono-tz",
- "eframe",
- "html-escape",
- "keyring",
- "reqwest",
- "serde",
- "serde_json",
- "sha2",
- "windows-sys 0.61.2",
- "zeroize",
 ]
 
 [[package]]

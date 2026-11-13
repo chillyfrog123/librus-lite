@@ -20,7 +20,7 @@ if ($previousFlags) {
 foreach ($sourceRoot in @($env:USERPROFILE, $env:CARGO_HOME, $env:RUSTUP_HOME)) {
     if ($sourceRoot) { $releaseFlags += "--remap-path-prefix=$sourceRoot=/build/home" }
 }
-$releaseFlags += "--remap-path-prefix=$PSScriptRoot=/build/librus-lite"
+$releaseFlags += "--remap-path-prefix=$PSScriptRoot=/build/klaso-desktop"
 $env:CARGO_ENCODED_RUSTFLAGS = $releaseFlags -join [char]31
 try {
     $cargoAction = if ($Run) { 'run' } else { 'build' }

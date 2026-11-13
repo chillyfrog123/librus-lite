@@ -1,4 +1,4 @@
-# Librus Lite Desktop
+# Klaso Desktop
 Fully vibecoded - created for the sake of saving time. (don't expect my own code on this acc)
 A small Windows desktop starter written in Rust, with native egui rendering.
 
@@ -10,11 +10,11 @@ Install stable Rust and either Visual Studio C++ Build Tools (MSVC target), or M
 cargo run --release
 ```
 
-Executable: `target/release/librus-lite.exe`. `cargo test --release` checks login redirects/cookies, required-action screens, Polish text decoding, ISO weeks and timetable normalization. `cargo fmt --check` and `cargo clippy --all-targets -- -D warnings` check code quality.
+Executable: `target/release/klaso-desktop.exe`. `cargo test --release` checks login redirects/cookies, required-action screens, Polish text decoding, ISO weeks and timetable normalization. `cargo fmt --check` and `cargo clippy --all-targets -- -D warnings` check code quality.
 
 You can also run `./run.ps1` in PowerShell; it builds the optimized executable and starts the app.
 
-`target/release/librus-lite.exe --demo` opens a clearly labeled offline preview with fictional data. Add `--compact` to start with a 900 × 640 client area. The preview never reads saved credentials, logs in, or writes theme preferences. The ignored `live_account_read_only` integration test requires an existing remembered account in Windows Credential Manager and reads only lists, without printing personal content. It is not run during normal tests.
+`target/release/klaso-desktop.exe --demo` opens a clearly labeled offline preview with fictional data. Add `--compact` to start with a 900 × 640 client area. The preview never reads saved credentials, logs in, or writes theme preferences. The ignored `live_account_read_only` integration test requires an existing remembered account in Windows Credential Manager and reads only lists, without printing personal content. It is not run during normal tests.
 
 ## Authentication
 

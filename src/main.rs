@@ -403,7 +403,7 @@ impl App {
         self.status = tr!("Wylogowywanie…", "Signing out…").into();
         let tx = self.tx.clone();
         std::thread::spawn(move || {
-            let result=vault::forget().map_err(|_|tr!("Sesję zamknięto, ale zapisanych danych nie usunięto. Usuń wpis LibrusLite w Menedżerze poświadczeń Windows.", "Session closed, but saved credentials could not be removed. Delete the LibrusLite entry in Windows Credential Manager.").to_owned());
+            let result=vault::forget().map_err(|_|tr!("Sesję zamknięto, ale zapisanych danych nie usunięto. Usuń zapisane dane logowania aplikacji w Menedżerze poświadczeń Windows.", "Session closed, but saved credentials could not be removed. Remove the saved app sign-in entry from Windows Credential Manager.").to_owned());
             let remote = session.map(|s| s.logout()).transpose();
             let result=result.and_then(|_|remote.map(|_|()).map_err(|_|tr!("Wylogowano lokalnie i usunięto zapisane konto. Serwer nie potwierdził wylogowania.", "Signed out locally and removed the saved account. The server did not confirm sign-out.").into()));
             let _ = tx.send(Event::Logout { epoch, result });
@@ -589,7 +589,7 @@ impl App {
                         egui::Stroke::new(3.0_f32, Color32::from_rgb(12, 22, 36)),
                     );
                     ui.vertical(|ui| {
-                        ui.label(RichText::new("librus lite").size(23.).strong());
+                        ui.label(RichText::new("Klaso Desktop").size(23.).strong());
                         ui.small(
                             RichText::new(tr!("Twój dziennik szkolny", "Your school journal"))
                                 .size(11.)
@@ -1114,7 +1114,7 @@ fn paint_icon(p: &egui::Painter, r: egui::Rect, section: Section, color: Color32
 fn main() -> eframe::Result {
     let compact = std::env::args().any(|arg| arg == "--compact");
     eframe::run_native(
-        concat!("Librus Lite ", env!("CARGO_PKG_VERSION")),
+        concat!("Klaso Desktop ", env!("CARGO_PKG_VERSION")),
         eframe::NativeOptions {
             viewport: egui::ViewportBuilder::default()
                 .with_inner_size(if compact { [900., 640.] } else { [1260., 850.] })
